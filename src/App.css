@@ -7,6 +7,10 @@
   align-items: center;
 }
 
+.blinking {
+  background-color: red;
+}
+
 button {
   margin-top: 15px;
 }

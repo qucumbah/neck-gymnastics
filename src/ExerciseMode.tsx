@@ -24,6 +24,8 @@ function ExerciseMode(props: ExerciseModeProps) {
   const [currentRep, setCurrentRep] = useState(1);
   const [millisecondsLeft, setMillisecondsLeft] = useState(props.secsPerRep * 1000);
 
+  const [isBlinking, setIsBlinking] = useState(false);
+
   const [isPaused, setIsPaused] = useState(true);
 
   const updateCurrentExercise = () => {
@@ -53,8 +55,10 @@ function ExerciseMode(props: ExerciseModeProps) {
 
     if (newMillisecondsLeft === 0) {
       setMillisecondsLeft(props.secsPerRep * 1000);
+      setIsBlinking(true);
       updateCurrentRep();
     } else {
+      setIsBlinking(false);
       setMillisecondsLeft(newMillisecondsLeft);
     }
   };
@@ -65,7 +69,7 @@ function ExerciseMode(props: ExerciseModeProps) {
       return;
     }
 
-    const precision = 100;
+    const precision = 200;
     const timeoutId = setTimeout(() => {
       setLastUpdate(Date.now());
       updateMillisecondsLeft(precision);
@@ -84,7 +88,7 @@ function ExerciseMode(props: ExerciseModeProps) {
   );
   
   return (
-    <div className="SettingsMode flex-column">
+    <div className={`SettingsMode flex-column ${isBlinking ? 'blinking' : ''}`}>
       <p className="heading">Exercise:</p>
       <p className="heading">{exercises[currentExerciseIndex]}</p>
       <p className="heading">Repetition:</p>
