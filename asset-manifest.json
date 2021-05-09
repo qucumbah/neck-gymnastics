@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.6cc68582.chunk.css",
-    "main.js": "/static/js/main.ab804f17.chunk.js",
-    "main.js.map": "/static/js/main.ab804f17.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.60dab00f.js",
-    "runtime-main.js.map": "/static/js/runtime-main.60dab00f.js.map",
-    "static/js/2.e431f116.chunk.js": "/static/js/2.e431f116.chunk.js",
-    "static/js/2.e431f116.chunk.js.map": "/static/js/2.e431f116.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/main.6cc68582.chunk.css.map": "/static/css/main.6cc68582.chunk.css.map",
-    "static/js/2.e431f116.chunk.js.LICENSE.txt": "/static/js/2.e431f116.chunk.js.LICENSE.txt"
+    "main.css": "/neck-gymnastics/static/css/main.6cc68582.chunk.css",
+    "main.js": "/neck-gymnastics/static/js/main.ab804f17.chunk.js",
+    "main.js.map": "/neck-gymnastics/static/js/main.ab804f17.chunk.js.map",
+    "runtime-main.js": "/neck-gymnastics/static/js/runtime-main.c0a2cd3a.js",
+    "runtime-main.js.map": "/neck-gymnastics/static/js/runtime-main.c0a2cd3a.js.map",
+    "static/js/2.e431f116.chunk.js": "/neck-gymnastics/static/js/2.e431f116.chunk.js",
+    "static/js/2.e431f116.chunk.js.map": "/neck-gymnastics/static/js/2.e431f116.chunk.js.map",
+    "index.html": "/neck-gymnastics/index.html",
+    "static/css/main.6cc68582.chunk.css.map": "/neck-gymnastics/static/css/main.6cc68582.chunk.css.map",
+    "static/js/2.e431f116.chunk.js.LICENSE.txt": "/neck-gymnastics/static/js/2.e431f116.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.60dab00f.js",
+    "static/js/runtime-main.c0a2cd3a.js",
     "static/js/2.e431f116.chunk.js",
     "static/css/main.6cc68582.chunk.css",
     "static/js/main.ab804f17.chunk.js"
