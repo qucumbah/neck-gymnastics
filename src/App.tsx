@@ -1,11 +1,24 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 
 import SettingsMode from './SettingsMode';
 import ExerciseMode from './ExerciseMode';
 
 function App() {
-  const [mode, setMode] = useState<'exercise' | 'settings'>('settings');
+  const [mode, setMode] = useState<'exercise' | 'settings' | 'no-wake-lock'>('settings');
+
+  useEffect(() => {
+    // Navigator types are hopelessly outdated
+    const anyNavigator = navigator as any;
+    if (!('wakeLock' in anyNavigator)) {
+      setMode('no-wake-lock');
+      return;
+    }
+
+    anyNavigator.wakeLock.request('screen')
+      .then(() => setMode('settings'))
+      .catch(() => setMode('no-wake-lock'));
+  }, []);
 
   const [totalReps, setTotalReps] = useState(10);
   const [secsPerRep, setSecsPerRep] = useState(5);
@@ -28,9 +41,17 @@ function App() {
     />
   );
 
+  const getMode = () => {
+    switch (mode) {
+      case 'settings': return getSettingsMode();
+      case 'exercise': return getExerciseMode();
+      case 'no-wake-lock': return <div className="flex-column">Failed to aquire wake lock. Try to reload your page</div>;
+    }
+  };
+
   return (
     <div className="App">
-      {(mode === 'settings') ? getSettingsMode() : getExerciseMode()}
+      {getMode()}
     </div>
   );
 }
