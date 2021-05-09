@@ -21,7 +21,7 @@ function App() {
   }, []);
 
   const [totalReps, setTotalReps] = useState(10);
-  const [secsPerRep, setSecsPerRep] = useState(5);
+  const [secsPerRep, setSecsPerRep] = useState(10);
 
   const getSettingsMode = () => (
     <SettingsMode
